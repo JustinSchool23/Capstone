@@ -1,10 +1,12 @@
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 from flask import Flask, jsonify, render_template, request
 from groq import Groq
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+load_dotenv(BASE_DIR / ".env")
 
 app = Flask(__name__)
 
@@ -96,4 +98,6 @@ def summarize():
 
 if __name__ == "__main__":
     debug = os.getenv("FLASK_DEBUG", "0") == "1"
-    app.run(debug=debug)
+    if not os.getenv("GROQ_API_KEY"):
+        print("Warning: GROQ_API_KEY is not set. Add it to .env and restart the server.")
+    app.run(debug=debug, use_reloader=False)
