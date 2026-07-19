@@ -5,10 +5,20 @@ Use this Product Requirement Document to create a web application, using Flask, 
 1. **summarizes .txt files**
     - When the button is clicked it will summerize the .txt file lasted entered
     - If no .txt file is entered nothing happens
+
 2. **Recieves .txt files**
     - Has a box that users can either drop .txt files onto or click on it and selected a file
-    - 
+
+3. **Displays text**
+    - A textbox to the left that displays the text from the .txt file
+    - A textbox to the right that displays the summerized text Groq AI produced
+
 ## Technical Stack
+**Backend Framework**: 
+**Program Logic**:
+**Frontend**:
+**API**:
+
 
 ## Project Structure
 
